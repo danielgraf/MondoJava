@@ -195,7 +195,7 @@ MondoJava provides a utility to convert a JSON string to a MondoJava object :
 
 ```java
     // Convert some JSON containing a transaction list to a MondoExpandedTransactions object
-    MondoExpandedTransactions transactions = (MondoExpandedTransactions) ToJava.convert(json), MondoExpandedTransactions.class);
+    MondoExpandedTransactions transactions = (MondoExpandedTransactions) ToJava.convert(json, MondoExpandedTransactions.class);
 ```
 
 ...and to convert from a MondoJava object back to a JSON string :
