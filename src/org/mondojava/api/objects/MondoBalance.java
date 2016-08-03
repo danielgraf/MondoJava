@@ -40,13 +40,13 @@ public class MondoBalance {
     }
 
     private long local_exchange_rate;
-    private ArrayList<Long> local_spend;
+    private ArrayList<MondoLocalSpend> local_spend;
 
-    public ArrayList<Long> getLocal_spend() {
+    public ArrayList<MondoLocalSpend> getLocal_spend() {
         return local_spend;
     }
 
-    public void setLocal_spend(ArrayList<Long> local_spend) {
+    public void setLocal_spend(ArrayList<MondoLocalSpend> local_spend) {
         this.local_spend = local_spend;
     }
 
