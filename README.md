@@ -13,14 +13,15 @@ This library does not store or manage client_id or client_secret - that's up to 
 
 #Examples - Authorisation
 
-```// Initialise a MondoClient with an existing access token
+```java
+   // Initialise a MondoClient with an existing access token
    MondoClient mc = new MondoClient("<your client ID>", "<your client secret>");
    mc.setAccess_token(access_token); // if you already have one
 ```
 
-```
-// A Servlet which performs the first step in authentication
-@Override
+```java
+    // A Servlet which performs the first step in authentication
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
@@ -57,7 +58,7 @@ This library does not store or manage client_id or client_secret - that's up to 
         
     }
 ```
-```
+```java
  // A Servlet which is called by the magic email button to exchange the code for the token
  @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
