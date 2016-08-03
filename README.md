@@ -154,14 +154,17 @@ Some examples here of how to use the MondoClient methods. The calls return Java 
            
    // Single the most recent one out
    MondoExpandedTransaction mostrecent = txns.getTransactions().get(txns.getTransactions().size()-1);
-   System.out.println("mostrecent : " + mostrecent.getId() + " " + mostrecent.getAmount() + " at " + mostrecent.getMerchant().getName());
+   System.out.println("mostrecent : " + mostrecent.getId() + " " + mostrecent.getAmount() + " at " 
+                                      + mostrecent.getMerchant().getName());
             
    // Get Transaction by ID
    MondoExpandedTransaction mrtxn = mc.getTransaction(account_id, mostrecent.getId());
    System.out.println(mrtxn.getId() + "-" + mrtxn.getDescription());
 
    // Annotate transaction
-   SimpleEntry[] tags = {new SimpleEntry("metadata[rating]", "100"), new SimpleEntry("metadata[stars]", "5")};
+   SimpleEntry[] tags = {new SimpleEntry("metadata[rating]", "100"), 
+                         new SimpleEntry("metadata[stars]", "5")};
+                         
    MondoTransaction tagged = mc.annotateTransaction(mostrecent.getId(), tags);
    System.out.println(tagged.getMetadata());
             
@@ -195,7 +198,8 @@ MondoJava provides a utility to convert a JSON string to a MondoJava object :
 
 ```java
     // Convert some JSON containing a transaction list to a MondoExpandedTransactions object
-    MondoExpandedTransactions transactions = (MondoExpandedTransactions) ToJava.convert(json, MondoExpandedTransactions.class);
+    MondoExpandedTransactions transactions = (MondoExpandedTransactions) 
+                                             ToJava.convert(json, MondoExpandedTransactions.class);
 ```
 
 ...and to convert from a MondoJava object back to a JSON string :
