@@ -1,17 +1,17 @@
-#MondoJava
+# MondoJava
 A Java library for Mondo Bank
 
 This library enables Java applications to use the Mondo Bank API, including helper methods for OAuth2 authentication, and almost all API features.
 
 Still to do : Transaction Attachments.
 
-#How ?
+# How ?
 
 The library is a Netbeans / Ant project. Compile it from the command line with ant, or load it as a Netbeans project. The result is a JAR file you can incorporate into your own application. 
 
 This library does not store or manage client_id or client_secret - that's up to you.
 
-#Examples - Authorisation
+# Examples - Authorisation
 
 Because of the OAuth2 flow with the email magic button, it is only possible to perform authorisation with this library using a web app.
 
@@ -125,7 +125,7 @@ The second servlet which is called by the magic email button looks like this, pe
     }
 ```
 
-#API use in MondoJava
+# API use in MondoJava
 
 To use the API, a MondoClient object must be created, and furnished with the relevant credentials :
 
@@ -192,7 +192,7 @@ Some examples here of how to use the MondoClient methods. The calls return Java 
    System.out.println("There are " + webhooks.getWebhooks().size() + " webhooks registered");
 ```
 
-#Utilities
+# Utilities
 
 MondoJava provides a utility to convert a JSON string to a MondoJava object :
 
